@@ -1,4 +1,4 @@
-int buzer = 9;
+int buzzer = 9;
 int button = 2;
 
 // ноти та їх частоти
@@ -42,7 +42,7 @@ int star_wars[] = {sol,SEMIB, sol,SEMIB, sol,SEMIB, re_dies,HALF+POINT, la_dies,
 
 
 void setup() {
-  pinMode(buzer, OUTPUT);
+  pinMode(buzzer, OUTPUT);
   Serial.begin(9600);
   pinMode(button, INPUT);
 }
@@ -62,9 +62,9 @@ void loop() {
 void play(int*melody, int len){
   delay(750);
   for (int i = 0; i < len; i++){
-    tone(buzer, melody[i]);
+    tone(buzzer, melody[i]);
     delay(melody[++i]);
-    noTone(buzer);
+    noTone(buzzer);
     delay(75);
     if (digitalRead(button) == LOW) 
       break;
